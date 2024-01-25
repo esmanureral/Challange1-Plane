@@ -6,7 +6,7 @@ public class PlayerControllerX : MonoBehaviour
 {
     public float speed;
     public float rotationSpeed;
-    public float verticalInput;
+    public float verticalInput;//dikeygiriş
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +21,11 @@ public class PlayerControllerX : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         // move the plane forward at a constant rate
-        /*transform.Translate(Vector3.back * speed*);yerine:*/
-        transform.Translate(Vector3.forward*speed*Time.deltaTime);
+        /*transform.Translate(Vector3.back * speed*);yerine: forward=ileri*/
+        transform.Translate(Vector3.forward*speed*Time.deltaTime);//uçağın sabit düz gitmesi için gereklidir.
 
         // tilt the plane up/down based on up/down arrow keys
         /*transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);yerine:*/
-        transform.Rotate(Vector3.right*rotationSpeed*Time.deltaTime*verticalInput);
+        transform.Rotate(Vector3.right*rotationSpeed*Time.deltaTime*verticalInput);//yukarı-aşağı tuş kontrolü
     }
 }
